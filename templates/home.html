@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @import "{% static 'style.css' %}";
+    </style>
+</head>
+<body>
+    <div class="changetype" style="width: 100%; height: 180px; overflow-y: scroll; position: fixed; top: 0;background: white;">
+            <div><a href="javascript:void(0)" onclick="changetype(2)">热门福利姬</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(3)">cosplay</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(4)">诱惑小萝莉</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(27)">乱伦偷情</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(15)">网络热门专区</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(21)">偷拍偷窥</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(13)">JVID</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(14)">欧美少女</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(20)">日本素人</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(17)">SWAG</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(29)">起点传媒</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(16)">人气肉番</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(22)">国漫精品</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(8)">3D合集</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(19)">爆款日漫</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(12)">MMD</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(25)">游戏CG</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(11)">英雄联盟</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(7)">守望先锋</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(26)">YAM</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(9)">剧场版</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(10)">热门番剧</a></div>
+            <div><a href="javascript:void(0)" onclick="changetype(1)">我的喜欢</a></div>
+
+
+    </div>
+    <div class="container">
+        <div class="container2"></div>
+        <div class="container3"></div>
+        <div class="container4"></div>
+        <div class="container27"></div>
+        <div class="container15"></div>
+        <div class="container21"></div>
+        <div class="container13"></div>
+        <div class="container14"></div>
+        <div class="container20"></div>
+        <div class="container17"></div>
+        <div class="container29"></div>
+        <div class="container16"></div>
+        <div class="container22"></div>
+        <div class="container8"></div>
+        <div class="container19"></div>
+        <div class="container12"></div>
+        <div class="container25"></div>
+        <div class="container11"></div>
+        <div class="container7"></div>
+        <div class="container26"></div>
+        <div class="container9"></div>
+        <div class="container10"></div>
+        <div class="container1"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="{% static 'loadimg.js' %}"></script>
+    <script>
+
+        type2 = 2;
+        scrolling = true;
+        count = [];
+        for (var i = 0; i <30; i++){
+            count.push(0);
+        }
+        add_list();
+        function add_list(){
+            $.ajax({
+                dataType: "json",
+                type: "POST",
+                url: "/getlist/",
+                data: {"type2": type2, "page": ++count[type2]},
+                success: function (data) {
+                    var data = data.data;
+                    for(var i=0; i<data.length; i++) {
+                        imgdata = getpic(data[i][0], data[i][1], data[i][2], data[i][5], type2);
+                    }
+                    if(data.length == 0)count[type2]--;
+                    scrolling = true;
+                }
+            })
+        }
+        $(window).scroll(function (){
+            var scrollTop = $(window).scrollTop();
+            var height = $(window).height();
+            var scrollHeight = $(`.container${type2}`).height();
+            if (scrollTop + height >= scrollHeight && scrolling){
+                add_list();
+                scrolling = false;
+            }
+        })
+    </script>
+</body>
+</html>
