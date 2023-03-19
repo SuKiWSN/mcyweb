@@ -15,7 +15,7 @@ def get_list(kind_id, page):
     url = 'https://mhw.vxdtmee.xyz/api/video/classify/getClassifyVideos?classifyId=1&page=1&pageSize=50&sortNum=1'
     url = url.replace('page=1', 'page={}'.format(page)).replace('classifyId=1', 'classifyId={}'.format(kind_id))
     headers = {
-            'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NTU1NTI1IiwiaXNzIjoiIiwiaWF0IjoxNjU0OTM3NzkzLCJuYmYiOjE2NTQ5Mzc3OTMsImV4cCI6MTgxMjYxNzc5M30.Ia5nCiz79DHnqZC6gPjZlD46XUdUlJ6Izg0zEUYxL10',
+            'Authorization': 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODU0MjUzNiIsImlzcyI6IiIsImlhdCI6MTY3OTIwNTcyOCwibmJmIjoxNjc5MjA1NzI4LCJleHAiOjE4MzY4ODU3Mjh9.HvG0U-1ZhkhBD9QMQ3Jo9XCeNToQvLYYo5_Auo7Whhw',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15',
             'User-Mark': 'xhp',
             's': s,
@@ -33,7 +33,8 @@ def get_list(kind_id, page):
     data = data['data']
     for i in data:
         videoid = i['videoId']
-        imageUrl = 'https://imagessy.chen6666.top/' + i['coverImg'][0]
+        imageUrl = 'https://ivnwevs.chen6666.top/' + i['coverImg'][0]
+        print(i['coverImg'][0])
         height = i['height']
         width = i['width']
         title = i['title']
@@ -57,7 +58,7 @@ def get_data(id):
     s = hl.hexdigest()
     url = 'https://mhw.vxdtmee.xyz/api/video/getVideoById?videoId={}'.format(id)
     headers = {
-        'Authorization': "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NjgyMjYzIiwiaXNzIjoiIiwiaWF0IjoxNjU1MTk0NjYxLCJuYmYiOjE2NTUxOTQ2NjEsImV4cCI6MTgxMjg3NDY2MX0.A_ZSm_8vPItEre9yt2aU3CBYWQtqaV7eLuWqsZYonbU",
+        'Authorization': "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODU0MjUzNiIsImlzcyI6IiIsImlhdCI6MTY3OTIwNTcyOCwibmJmIjoxNjc5MjA1NzI4LCJleHAiOjE4MzY4ODU3Mjh9.HvG0U-1ZhkhBD9QMQ3Jo9XCeNToQvLYYo5_Auo7Whhw",
         'User-Agent': 'Mozilla/5.0 (Linux; U; Android 9; zh-cn; Redmi Note 5 Build/PKQ1.180904.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/71.0.3578.141 Mobile Safari/537.36 XiaoMi/MiuiBrowser/11.10.8',
         'User-Mark': 'xhp',
         's': s,
