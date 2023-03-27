@@ -30,7 +30,7 @@ def search(page, data):
     }
     dlist = []
     for searchType in range(1, 3):
-        url = f"https://mhw.vxdtmee.xyz/api/search/keyWord?page={page}&pageSize=10&searchType={searchType}&searchWord={data}"
+        url = f"https://mhw.vxdtmee.xyz/api/search/keyWord?page={page}&pageSize=20&searchType={searchType}&searchWord={data}"
         res = requests.get(url, headers=headers)
         js = json.loads(res.text)
         video_list = []
