@@ -116,6 +116,36 @@
             count[0] = 0;
         }
         })
+        window.onload = function () {
+      //e.preventDefault() --- 阻止默认事件
+      //当一个手指放在屏幕上时，会触发touchstart事件。如果另一个手指又放在了屏幕上，则会先触发gesturestart事件，随后触发基于该手指的touchstart事件。
+      document.addEventListener('gesturestart', function (e) {
+        e.preventDefault();
+      });
+
+      //在单个元素上单击两次 --- dblclick
+      document.addEventListener('dblclick', function (e) {
+        e.preventDefault();
+      });
+
+      //一个手指放在屏幕上时，会触发touchstart事件
+      document.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      });
+
+      //如果一个或两个手指在屏幕上滑动，将会触发gesturechange事件
+      //但只要有一个手指移开，则会触发gestureend事件，紧接着又会触发toucheend事件。
+      var lastTouchEnd = 0;
+      document.addEventListener('touchend', function (event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+    };
     </script>
 </body>
 </html>
