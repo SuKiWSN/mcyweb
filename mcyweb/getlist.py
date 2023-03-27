@@ -12,6 +12,7 @@ def get_list(kind_id, page):
     hl.update(ts.encode(encoding='utf8'))
     s = hl.hexdigest()
 
+
     url = 'https://mhw.vxdtmee.xyz/api/video/classify/getClassifyVideos?classifyId=1&page=1&pageSize=50&sortNum=1'
     url = url.replace('page=1', 'page={}'.format(page)).replace('classifyId=1', 'classifyId={}'.format(kind_id))
     headers = {

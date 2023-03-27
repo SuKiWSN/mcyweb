@@ -9,6 +9,7 @@
     </style>
 </head>
 <body>
+
     <div class="changetype" style="width: 100%; height: 180px; overflow-y: scroll; position: fixed; top: 0;background: white;">
             <div><a href="javascript:void(0)" onclick="changetype(2)">热门福利姬</a></div>
             <div><a href="javascript:void(0)" onclick="changetype(3)">cosplay</a></div>
@@ -36,6 +37,9 @@
 
 
     </div>
+    <div class="search" style="width: 200px; height: 30px; position: fixed; top: 200px; left: 20px;">
+        <input id="search-input" type="text" style="width: 100%; height: 100%; font-size: 20px;">
+    </div>
     <div class="container">
         <div class="container2"></div>
         <div class="container3"></div>
@@ -60,6 +64,7 @@
         <div class="container9"></div>
         <div class="container10"></div>
         <div class="container1"></div>
+        <div class="container0"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -74,11 +79,12 @@
         }
         add_list();
         function add_list(){
+
             $.ajax({
                 dataType: "json",
                 type: "POST",
                 url: "/getlist/",
-                data: {"type2": type2, "page": ++count[type2]},
+                data: {"type2": type2, "page": ++count[type2], "text": document.getElementById("search-input").value},
                 success: function (data) {
                     var data = data.data;
                     for(var i=0; i<data.length; i++) {
@@ -97,6 +103,16 @@
                 add_list();
                 scrolling = false;
             }
+        })
+        $("#search-input").bind('keypress', function (event){
+        if(event.keyCode == "13"){
+            var c = document.getElementsByClassName("container0")[0].childNodes;
+            for(var i=c.length-1;i>=0;i--){
+                document.getElementsByClassName("container0")[0].removeChild(c[i]);
+            }
+            changetype(0);
+            count[0] = 0;
+        }
         })
     </script>
 </body>
