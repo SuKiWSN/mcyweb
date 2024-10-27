@@ -110,10 +110,9 @@ def get_data(id):
         'User-Mark': 'xhp',
         's': s,
         't': t,
-        'Connection': "close",
+        'Connection': "keep-alive",
     }
     res = requests.get(url, headers=headers)
-    res.close()
     js = json.loads(res.text)
     encdata = js['encData']
     decodedcode = decode(encdata)

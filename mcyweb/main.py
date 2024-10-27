@@ -26,7 +26,7 @@ def search(page, data):
         'User-Mark': 'xhp',
         's': s,
         't': t,
-        'Referer': 'https://mhw.vxdtmee.xyz/play/28620',
+        'Referer': 'https://d2dchjwa8oh2hv.cloudfront.net/play/28620',
         'Accept': 'application/json, text/plain, */*',
         'Pragma': 'no-cache',
     }

@@ -16,11 +16,11 @@ def search(page, data):
     s = hl.hexdigest()
     headers = {
         'Authorization': cfg.token,
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Safari/605.1.15',
         'User-Mark': 'xhp',
         's': s,
         't': t,
-        'Referer': 'https://mhw.vxdtmee.xyz/play/28620',
+        'Referer': 'https://d2dchjwa8oh2hv.cloudfront.net/play/28620',
         'Accept': 'application/json, text/plain, */*',
         'Pragma': 'no-cache',
     }
