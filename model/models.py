@@ -11,3 +11,7 @@ class favorite(models.Model):
     videoTitle = models.CharField(max_length=255)
     ImageUrl = models.CharField(max_length=255)
     price = models.IntegerField()
+
+class videos(models.Model):
+    videoId = models.IntegerField()
+    videoUrl = models.CharField(max_length=255)

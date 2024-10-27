@@ -24,7 +24,7 @@ def convert_image_to_gif(output_file):
         img = img.resize((width, int(width * h/w)))
         frames.append(img)
     frame_one = frames[0]
-    frame_one.save(output_file, format="GIF", append_images=frames[1:], save_all=True, duration=30, loop=0)
+    frame_one.save(output_file, format="GIF", append_images=frames[1:], save_all=True, duration=50, loop=0)
 
     fl = os.listdir("output")
     for filename in fl:

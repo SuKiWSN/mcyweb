@@ -72,7 +72,7 @@ function getvideo(videoUrl) {
             data: {"videoId": videoUrl},
             success: function(data){
                 data = data.data
-                videoUrl = "https://mhw.vxdtmee.xyz/api/m3u8/h5/decode?path=" + data;
+                videoUrl = "https://d2dchjwa8oh2hv.cloudfront.net/api/m3u8/decode/authPath?" + data;
                 window.open(videoUrl, "_self");
             }
         }
