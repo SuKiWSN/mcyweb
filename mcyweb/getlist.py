@@ -110,19 +110,21 @@ def get_data(id):
         'User-Mark': 'xhp',
         's': s,
         't': t,
+        'Connection': "close",
     }
     res = requests.get(url, headers=headers)
+    res.close()
     js = json.loads(res.text)
     encdata = js['encData']
     decodedcode = decode(encdata)
-    print(decodedcode)
     return decodedcode
 
 if __name__ == '__main__':
     "https://mhw.vxdtmee.xyz/api/m3u8/decode/authPath?path=mib/db/om/cs/my/46bfe0f82cdc4a33b10e6ed2a6916583.m3u8&auth_key=1704095250-023460332-8-85a39f52dc08568f584a2d6ae34578d5"
     data = "1704095250"
     data = encode(data)
-
+    "https://d2dchjwa8oh2hv.cloudfront.net/play/311897"
+    "https://d2dchjwa8oh2hv.cloudfront.net/api/m3u8/decode/authPath?path=jpd/20240921/8g/x7/2p/5f/a4eb8c1ed39140fb9e1b643897f49be6.m3u8&auth_key=1730011562-029532217-8-aae353d75553661d388327633359898e"
     # https://d2dchjwa8oh2hv.cloudfront.net/api/m3u8/decode/authPath?path=spg/20240126/id/4d/u6/tn/d90e486c73044146872bbccca9d2de3f.m3u8&auth_key=1729219585-129532217-8-2fcb0ee16cd2b9e050976b30b037919d
 # spg/20240126/id/4d/u6/tn/d90e486c73044146872bbccca9d2de3f.m3u8&auth_key=1729219821-029528907-8-65d68b593ec0ba9b6a71cbb2a67fbdf2
     print(len("85a39f52dc08568f584a2d6ae34578d5"))

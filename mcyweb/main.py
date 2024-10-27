@@ -72,16 +72,16 @@ def getvideo(request):
     videoId = request.POST.get('videoId')
     id = int(videoId)
     video = videos.objects.filter(videoId=id)
-    if len(video) != 0:
-        param = video[0].videoUrl
-    else:
-        data = getlist.get_data(videoId)
-        data = json.loads(data)
-        videoUrl = data['videoUrl']
-        authKey = data['authKey']
-        param = "path=" + videoUrl + "&auth_key=" + authKey
-        print(param)
-        videos(videoId=int(videoId), videoUrl=param).save()
+    # if len(video) != 0:
+    #     param = video[0].videoUrl
+    # else:
+    data = getlist.get_data(videoId)
+    data = json.loads(data)
+    videoUrl = data['videoUrl']
+    authKey = data['authKey']
+    param = "path=" + videoUrl + "&auth_key=" + authKey
+    print(param)
+    videos(videoId=int(videoId), videoUrl=param).save()
     return JsonResponse({"data": param})
 
 def submitlike(request):
