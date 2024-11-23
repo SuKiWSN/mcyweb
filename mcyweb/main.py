@@ -45,6 +45,7 @@ def search(page, data):
         dlist.extend(video_list)
     return dlist
 def returnlist(request):
+    station_list = [144, 203, 202]
     type1 = request.POST.get('type1')
     type2 = request.POST.get('type2')
     page = request.POST.get('page')
@@ -55,7 +56,7 @@ def returnlist(request):
     elif type2 == "0":
         text = request.POST.get('text')
         videos = search(page, text)
-    elif type2 == "1":
+    elif int(type2) in station_list:
         videos = getlist.getStationMore(type2, page)
     else:
         videos = getlist.get_list(type2, page)

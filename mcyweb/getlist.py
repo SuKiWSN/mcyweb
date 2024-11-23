@@ -32,7 +32,6 @@ def get_list(kind_id, page):
     id_list = []
     encdata = js['encData']
     decodedcode = decode(encdata)
-    # print(decodedcode)
     data = json.loads(decodedcode)
     data = data['data']
     for i in data:
@@ -55,7 +54,7 @@ def getStationMore(kind_id, page):
     s = hl.hexdigest()
 
     url = cfg.host + '/api/video/getStationMore?stationId=144&sortType=1&page=1&pageSize=16&_t=1702117835366'
-    url = url.replace('page=1', 'page={}'.format(page))
+    url = url.replace('page=1', 'page={}'.format(page)).replace("stationId=144", "stationId={}".format(kind_id))
     headers = {
         'Authorization': cfg.token,
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15',
