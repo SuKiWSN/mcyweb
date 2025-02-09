@@ -8,4 +8,6 @@ urlpatterns = [
     path('getlist/', main.returnlist),
     path('getvideo/', main.getvideo),
     path('submitlike/', main.submitlike),
+    path('getStation/', main.getStation),
+    path('getStationMore/', main.getStationMore)
 ]

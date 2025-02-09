@@ -1,18 +1,18 @@
-.container div{
+.container div, .station div div {
     width: 100%;
     height: 90%;
     overflow-y: hidden;
-    margin-top: 250px;
+    /*margin-top: 250px;*/
 }
-.container div div{
+.container div div, .station div div div {
     float: left;
-    width: 47%;
-    height: 318px;
+    width: 45%;
+    height: 450px;
     margin-left: 20px;
     margin-top: 20px;
     border-radius: 5px;
 }
-.container div div div{
+.container div div div, .station div div div div{
     width: 100%;
     height: 50px;
     float: left;
@@ -20,20 +20,120 @@
     margin: auto;
     top: 40px;
 }
-img{
-    width: 403px;
-    height: 228px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px darkgray;
+/*img{*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 5px 5px 5px darkgray;*/
+/*}*/
+
+/*.changetype div{*/
+/*    float: left;*/
+/*    width: 250px;*/
+/*    font-size: 40px;*/
+/*}*/
+/*.changetype div a{*/
+/*    color:black;*/
+/*    float: left;*/
+/*    width: 100%;*/
+/*}*/
+.station div {
+    width: 100%;
+    height: 90%;
+    /*overflow-y: hidden;*/
+    /*margin-top: 30px;*/
 }
 
-.changetype div{
-    float: left;
-    width: 250px;
-    font-size: 40px;
+/* 基本样式 */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
-.changetype div a{
-    color:black;
-    float: left;
-    width: 100%;
+
+/* 按钮样式 */
+.expand-btn {
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    border: none;
+    right: 20px;
+    border-radius: 5px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.expand-btn .line {
+    width: 60px;
+    height: 8px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+/*.expand-btn.open {*/
+/*    width: 30%;*/
+/*    height: 40px;*/
+/*    border-radius: 5px 5px 0 0;  !* 圆角顶部 *!*/
+/*}*/
+
+.expand-btn.open .line {
+    background-color: #333;
+}
+
+/* 展开的列表 */
+.expandable-list {
+    display: none; /* 默认隐藏 */
+    right: 20px;
+    background-color: #f0f0f0;
+    position: fixed;
+    bottom: 20px;
+    width: 30%;
+    height: 90%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: scroll;
+    z-index: 999;
+}
+
+.expandable-list ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.expandable-list ul li {
+    margin-bottom: 10px;
+}
+
+.expandable-list ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 40px;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+.expandable-list ul li a:hover {
+    color: #007BFF;
+}
+
+/* 动画效果：按钮打开时的平滑过渡 */
+.expandable-list.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

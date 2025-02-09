@@ -10,78 +10,112 @@
     </style>
 </head>
 <body>
+    <button id="expandBtn" class="expand-btn">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
 
-    <div class="changetype" style="width: 100%; height: 180px; overflow-y: scroll; position: fixed; top: 0;background: white;">
-            <div><a href="javascript:void(0)" onclick="changetype(32)">最新</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(2)">热门福利姬</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(6)">热门推荐</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(3)">cosplay</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(18)">主播</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(4)">诱惑小萝莉</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(27)">乱伦偷情</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(15)">网络热门专区</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(21)">偷拍偷窥</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(13)">JVID</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(14)">欧美少女</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(20)">日本素人</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(17)">SWAG</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(29)">起点传媒</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(16)">人气肉番</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(22)">国漫精品</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(33)">同人</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(8)">3D合集</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(19)">爆款日漫</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(12)">MMD</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(25)">游戏CG</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(11)">英雄联盟</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(7)">守望先锋</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(26)">YAM</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(9)">剧场版</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(10)">热门番剧</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(24)">人妖</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(35)">流出视频</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(34)">会所</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(144)">幼女</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(203)">父女</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(202)">兄妹</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(23)">SM</a></div>
-            <div><a href="javascript:void(0)" onclick="changetype(39)">我的收藏</a></div>
-
-
-
+    <!-- 展开的列表 -->
+    <div id="expandableList" class="expandable-list">
+        <ul>
+            <li><a href="javascript:void(0)" onclick="changetype(1)">视频推荐</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(32)">最新</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(2)">热门福利姬</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(6)">动漫推荐</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(3)">cosplay</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(18)">主播</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(4)">诱惑小萝莉</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(27)">乱伦偷情</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(15)">网络热门专区</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(21)">偷拍偷窥</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(13)">JVID</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(14)">欧美少女</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(20)">日本素人</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(17)">SWAG</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(29)">起点传媒</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(16)">里番</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(22)">国漫精品</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(33)">同人</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(8)">3D</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(19)">爆款日漫</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(12)">MMD</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(25)">同人</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(11)">英雄联盟</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(7)">守望先锋</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(26)">YAM</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(41)">泡面番</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(9)">剧场版</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(10)">热门番剧</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(24)">人妖</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(35)">流出视频</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(34)">原创自制</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(144)">幼女</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(203)">父女</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(202)">兄妹</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(23)">SM</a></li>
+            <li><a href="javascript:void(0)" onclick="changetype(39)">我的收藏</a></li>
+        </ul>
     </div>
+{#    <div class="changetype" style="width: 100%; height: 180px; overflow-y: scroll; position: fixed; top: 0;background: white;">#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(1)">视频推荐</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(32)">最新</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(2)">热门福利姬</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(6)">动漫推荐</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(3)">cosplay</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(18)">主播</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(4)">诱惑小萝莉</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(27)">乱伦偷情</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(15)">网络热门专区</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(21)">偷拍偷窥</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(13)">JVID</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(14)">欧美少女</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(20)">日本素人</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(17)">SWAG</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(29)">起点传媒</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(16)">里番</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(22)">国漫精品</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(33)">同人</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(8)">3D</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(19)">爆款日漫</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(12)">MMD</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(25)">同人</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(11)">英雄联盟</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(7)">守望先锋</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(26)">YAM</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(41)">泡面番</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(9)">剧场版</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(10)">热门番剧</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(24)">人妖</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(35)">流出视频</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(34)">原创自制</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(144)">幼女</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(203)">父女</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(202)">兄妹</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(23)">SM</a></div>#}
+{#        <div><a href="javascript:void(0)" onclick="changetype(39)">我的收藏</a></div>#}
+{##}
+{##}
+{##}
+{#    </div>#}
     <div class="search" style="width: 200px; height: 30px; position: fixed; top: 200px; left: 20px;">
         <input id="search-input" type="text" style="width: 100%; height: 100%; font-size: 20px;">
     </div>
     <div class="container">
         <div class="container32"></div>
-        <div class="container2"></div>
-        <div class="container3"></div>
-        <div class="container4"></div>
-        <div class="container27"></div>
-        <div class="container15"></div>
         <div class="container21"></div>
         <div class="container13"></div>
-        <div class="container14"></div>
-        <div class="container20"></div>
         <div class="container17"></div>
         <div class="container29"></div>
-        <div class="container16"></div>
         <div class="container22"></div>
-        <div class="container8"></div>
         <div class="container18"></div>
         <div class="container19"></div>
         <div class="container33"></div>
-        <div class="container12"></div>
-        <div class="container25"></div>
         <div class="container11"></div>
         <div class="container7"></div>
         <div class="container26"></div>
         <div class="container9"></div>
-        <div class="container10"></div>
-        <div class="container6"></div>
         <div class="container24"></div>
-        <div class="container34"></div>
         <div class="container35"></div>
         <div class="container144"></div>
         <div class="container203"></div>
@@ -89,46 +123,95 @@
         <div class="container23"></div>
         <div class="container0"></div>
         <div class="container39"></div>
+        <div class="container100"></div>
 
-
+    </div>
+        <div class="station">
+        <div class="container1"></div>
+        <div class="container2"></div>
+        <div class="container3"></div>
+        <div class="container4"></div>
+        <div class="container14"></div>
+        <div class="container15"></div>
+        <div class="container20"></div>
+        <div class="container27"></div>
+        <div class="container34"></div>
+        <div class="container6"></div>
+        <div class="container16"></div>
+        <div class="container8"></div>
+        <div class="container25"></div>
+        <div class="container41"></div>
+        <div class="container12"></div>
+        <div class="container10"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="{% static 'loadimg.js' %}"></script>
     <script>
+        let img_server = "https://dg2ordyr4k5v3.cloudfront.net/"
+        let host = "https://d2dchjwa8oh2hv.cloudfront.net/"
+        let station_list = [1, 2, 3, 14, 20, 27, 4, 15, 34, 6, 16, 8, 25, 41, 12, 10];
 
-        type2 = 32;
+        type2 = 1;
+        let station_id;
 
         scrolling = true;
         count = [];
+        stationPage = 0;
         for (var i = 0; i <1000; i++){
             count.push(0);
         }
         add_list();
         function add_list(){
-
-            $.ajax({
-                dataType: "json",
-                type: "POST",
-                url: "/getlist/",
-                data: {"type2": type2, "page": ++count[type2], "text": document.getElementById("search-input").value},
-                success: function (data) {
-                    var data = data.data;
-                    for(var i=0; i<data.length; i++) {
-                        console.log(data[i]);
-                        imgdata = getpic(data[i][0], data[i][1], data[i][2], data[i][5], type2);
+            console.log(type2)
+            if (station_list.includes(type2) && count[type2] === 0){
+                count[type2]++;
+                $.ajax({
+                    dataType: "json",
+                    type: "POST",
+                    url: "/getStation/",
+                    data: {"stationId": type2},
+                    success: function (data) {
+                        data = data.data
+                        console.log(data)
+                        for (const station of data) {
+                            createStation(station)
+                        }
                     }
-                    if(data.length == 0)count[type2]--;
-                    scrolling = true;
-                }
-            })
+                })
+            }
+            else if (!station_list.includes(type2)) {
+                $.ajax({
+                    dataType: "json",
+                    type: "POST",
+                    url: "/getlist/",
+                    data: {
+                        "type2": type2,
+                        "page": ++count[type2],
+                        "text": document.getElementById("search-input").value
+                    },
+                    success: function (data) {
+                        var data = data.data;
+                        console.log(data)
+                        for (var i = 0; i < data.length; i++) {
+                            imgdata = getpic(data[i][0], data[i][1], data[i][2], data[i][5], type2);
+                        }
+                        if (data.length == 0) count[type2]--;
+                        scrolling = true;
+                    }
+                })
+            }
         }
         $(window).scroll(function (){
             var scrollTop = $(window).scrollTop();
             var height = $(window).height();
             var scrollHeight = $(`.container${type2}`).height();
             if (scrollTop + height >= scrollHeight && scrolling){
-                add_list();
+                if (type2 == 100) {
+                getStationMore(station_id);
+                count[100]++;}
+
+                else add_list();
                 scrolling = false;
             }
         })
@@ -143,6 +226,163 @@
 
         }
         })
+
+        function createStation(station){
+            console.log(station)
+            let stationId = station.stationId;
+            let video_list = [];
+            if (station.videoList != null){
+                for (const video of station.videoList){
+                    video_list.push(video);
+                }
+            }
+            if (station.collectionRank != null ){
+                for (const video of station.collectionRank){
+                video_list.push(video)}
+            }
+            if (station.hotRank != null){
+            for (const video of station.hotRank){
+            video_list.push(video)}}
+            if (station.watchRank != null){
+            for (const video of station.watchRank){
+            video_list.push(video)}}
+            if (station.listMainVideoResp != null ){
+                list = station.listMainVideoResp.list;
+                mainVideo = station.listMainVideoResp.mainVideo;
+                for (const video of mainVideo){
+                video_list.push(video)};
+                for (const video of list){
+                video_list.push(video)};
+
+            }
+
+            let stationDiv = document.createElement("div");
+            {#stationDiv.setAttribute("style", "text-align:center;font-size:40px;")#}
+            let h = document.createElement("h1");
+            {#h.textContent = station.stationName;#}
+            h.setAttribute("style", "text-align:center");
+            let a = document.createElement('a');
+            a.setAttribute("onclick", `changeStation(${stationId})`);
+            a.href = "javascript:void(0)";
+            a.textContent = station.stationName;
+            h.appendChild(a);
+            stationDiv.appendChild(h);
+            for (const video of video_list){
+                let imgUrl;
+                if (video.verticalImg == null || video.verticalImg.length == 0){
+                    imgUrl = img_server + video.coverImg[0];
+                }
+                else{
+                    imgUrl = img_server + video.verticalImg[0];
+                }
+
+                let videoId = video.videoId;
+                downloadImg(imgUrl, videoId, video.title, video.price, stationDiv);
+            }
+            let parentdiv = document.getElementsByClassName(`container${type2}`)[0];
+            parentdiv.appendChild(stationDiv)
+        }
+        function changeStation(stationId){
+            stationPage = 0;
+            document.getElementsByClassName("container100")[0].remove();
+            stationContainer = document.createElement("div");
+            stationContainer.setAttribute("class", "container100");
+            document.getElementsByClassName("container")[0].appendChild(stationContainer);
+            getStationMore(stationId);
+        }
+        function parseImage(videoId, data, title, price, type2, imgUrl, stationDiv){
+            const Ee = Rr("2020-zq3-888");
+            var Ar = 100;
+            var reader = new FileReader();
+            reader.readAsArrayBuffer(data);
+            reader.onload = function(){
+                var content = this.result;
+                var u = new Uint8Array(content);
+                for(var i=0;i<Ar;i++){
+                    u[i] ^= Ee[i%Ee.length];
+                }
+                const a = jr(u);
+                let e =  `data:image/png;base64,${a}`;
+                createStationDiv(e, videoId, title, price, type2, imgUrl, stationDiv);
+            }
+        }
+        function downloadImg(imgUrl, videoUrl, title, price, stationDiv){
+            let xhr = new XMLHttpRequest();
+            xhr.open('get', imgUrl, true);
+            xhr.responseType = 'blob';
+            xhr.onload = function(){
+                parseImage(videoUrl, xhr.response, title, price, type2, imgUrl, stationDiv);
+            }
+            xhr.send();
+        }
+        function createStationDiv(imgContent, videoId, title, price, type2, imgUrl, stationDiv){
+            let favorite = document.createElement('button');
+            favorite.setAttribute('style', 'width: 70px; height: 70px; position: absolute; font-size: 50px; border: none; margin: auto;')
+            favorite.setAttribute('id', imgUrl);
+            favorite.setAttribute('onclick', `submitlike(${videoId}, "${imgUrl}", "${title}", ${price})`);
+            favorite.textContent = '❤️';
+            let div = document.createElement("div");
+            div.appendChild(favorite);
+            let a = document.createElement("a")
+            a.href = "javascript:void(0)";
+            a.setAttribute("onclick", `getvideo(${videoId})`);
+            let img = document.createElement("img");
+            img.src = imgContent;
+            if (img.naturalWidth > img.naturalHeight){
+                img.setAttribute("style", "width:500px;height:auto;border-radius: 10px;box-shadow: 5px 5px 5px darkgray;")
+            }
+            else{
+                img.setAttribute("style", "height:350px;width:auto;border-radius: 10px;box-shadow: 5px 5px 5px darkgray;")
+            }
+            a.appendChild(img);
+            let titlediv = document.createElement("div");
+            titlediv.textContent = title;
+            div.appendChild(a)
+            let pricediv = document.createElement("div");
+            pricediv.textContent = price;
+            pricediv.setAttribute("style", "color: red;")
+            div.appendChild(pricediv);
+            div.appendChild(titlediv);
+            stationDiv.appendChild(div);
+        }
+        function getStationMore(stationId){
+            changetype(100);
+            station_id=stationId;
+            $.ajax({
+                    dataType: "json",
+                    type: "POST",
+                    url: "/getStationMore/",
+                    data: {
+                        "stationId": stationId,
+                        "page": ++stationPage,
+                    },
+                    success: function (data) {
+                        var data = data.data;
+                        console.log(data)
+                        for (var i = 0; i < data.length; i++) {
+                            imgdata = getpic(data[i][0], data[i][1], data[i][2], data[i][5], type2);
+                        }
+                        if (data.length == 0) count[type2]--;
+                        scrolling = true;
+                    }
+                })
+        }
+        // 获取按钮和可展开列表
+        const expandBtn = document.getElementById('expandBtn');
+        const expandableList = document.getElementById('expandableList');
+
+        // 点击按钮时切换列表的显示状态
+        expandBtn.addEventListener('click', function() {
+            // 切换按钮状态
+            this.classList.toggle('open');
+
+            // 切换列表显示/隐藏
+            expandableList.classList.toggle('show');
+        });
+
+
+
+
     </script>
 </body>
 </html>
