@@ -20,23 +20,7 @@
     margin: auto;
     top: 40px;
 }
-/*img{*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*    border-radius: 10px;*/
-/*    box-shadow: 5px 5px 5px darkgray;*/
-/*}*/
 
-/*.changetype div{*/
-/*    float: left;*/
-/*    width: 250px;*/
-/*    font-size: 40px;*/
-/*}*/
-/*.changetype div a{*/
-/*    color:black;*/
-/*    float: left;*/
-/*    width: 100%;*/
-/*}*/
 .station div {
     width: 100%;
     height: 90%;
@@ -74,12 +58,6 @@ body {
     background-color: white;
     border-radius: 4px;
 }
-
-/*.expand-btn.open {*/
-/*    width: 30%;*/
-/*    height: 40px;*/
-/*    border-radius: 5px 5px 0 0;  !* 圆角顶部 *!*/
-/*}*/
 
 .expand-btn.open .line {
     background-color: #333;

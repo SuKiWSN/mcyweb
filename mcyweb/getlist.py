@@ -30,7 +30,7 @@ def get_list(kind_id, page):
     s = hl.hexdigest()
 
 
-    url = cfg.host + '/api/video/classify/getClassifyVideos?classifyId=1&page=1&pageSize=50&sortNum=1'
+    url = cfg.host + '/api/video/classify/getClassifyVideos?classifyId=1&page=1&pageSize=20&sortNum=1'
     url = url.replace('page=1', 'page={}'.format(page)).replace('classifyId=1', 'classifyId={}'.format(kind_id))
     headers = {
             'Authorization': cfg.get_token(),
@@ -72,7 +72,7 @@ def getStationMore(kind_id, page):
     hl.update(ts.encode(encoding='utf8'))
     s = hl.hexdigest()
 
-    url = cfg.host + '/api/video/getStationMore?stationId=144&sortType=1&page=1&pageSize=16&_t=1702117835366'
+    url = cfg.host + '/api/video/getStationMore?stationId=144&sortType=1&page=1&pageSize=20&_t=1702117835366'
     url = url.replace('page=1', 'page={}'.format(page)).replace("stationId=144", "stationId={}".format(kind_id))
     headers = {
         'Authorization': cfg.get_token(),

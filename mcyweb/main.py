@@ -1,18 +1,20 @@
 from . import getlist
 from . import decodeData
-from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.http import HttpResponse, JsonResponse
 import json
 import time
 from model.models import favorite, videos
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 import hashlib
 import requests
 import mcyweb.cfg
 from mcyweb.getlist import get_headers, decode
 cfg = mcyweb.cfg.CFG()
 
+
 def home(request):
     return render(request, 'home.html')
+
 
 def search(page, data):
     ts = time.time()
@@ -81,6 +83,7 @@ def returnlist(request):
         videos = getlist.get_list(type2, page)
     return JsonResponse({"data": videos})
 
+
 def getdatafromdatabase():
     datas = favorite.objects.filter()
     videos = []
@@ -88,26 +91,29 @@ def getdatafromdatabase():
         videos.append([data.videoId, data.ImageUrl, data.videoTitle, 0, 0, data.price])
     return videos
 
+
 def getvideo(request):
     videoId = request.POST.get('videoId')
     id = int(videoId)
     video = videos.objects.filter(videoId=id)
-    # if len(video) != 0:
-    #     param = video[0].videoUrl
-    # else:
+    if len(video) != 0:
+        param = video[0].videoUrl
+    else:
+        data = getlist.get_data(videoId)
+        data = json.loads(data)
+        videoUrl = data['videoUrl']
+        param = videoUrl
+        videos(videoId=int(videoId), videoUrl=videoUrl).save()
     if cfg.authExp is None or time.time() > cfg.authExp:
         data = getlist.get_data(319037)
         data = json.loads(data)
         authKey = data["authKey"]
         cfg.authExp = time.time() + 600
         cfg.authKey = authKey
-    data = getlist.get_data(videoId)
-    data = json.loads(data)
-    videoUrl = data['videoUrl']
     authKey = cfg.authKey
-    param = "path=" + videoUrl + "&auth_key=" + authKey
-    videos(videoId=int(videoId), videoUrl=param).save()
-    return JsonResponse({"data": param})
+    video_url = "path=" + param + "&auth_key=" + authKey
+    return JsonResponse({"data": video_url})
+
 
 def getStationMore(request):
     station_id = request.POST.get("stationId")

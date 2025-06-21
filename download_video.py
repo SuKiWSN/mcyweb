@@ -33,4 +33,4 @@ def download_video(url, title):
 
 
 if __name__ == '__main__':
-    download_video(url="https://d2dchjwa8oh2hv.cloudfront.net/api/m3u8/decode/authPath?path=jpd/20250118/9y/2j/bc/9b/911714b2711d4f4fbf4130a0079921ff.m3u8&auth_key=1738852856-130549107-8-b85df074d9ffd4c2be2e85a4dcf66613", title="1")
+    download_video(url="https://d2dchjwa8oh2hv.cloudfront.net/api/m3u8/decode/authPath?path=jpd/20240924/ys/3p/da/6w/cc224dafdf7f462a8d3ccf9bd897d368.m3u8&auth_key=1748001421-130549107-8-97f5fe4918537d88bdab0a26abcb0545", title="1")

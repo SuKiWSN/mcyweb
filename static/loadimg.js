@@ -42,12 +42,7 @@ function createLink(videoUrl, imgUrl, title, price, type2, imgurl){
     a.setAttribute("onclick", `getvideo(${videoUrl})`);
     let img = document.createElement("img");
     img.src = imgUrl;
-    if (img.naturalWidth > img.naturalHeight){
-        img.setAttribute("style", "width:500px;height:auto;border-radius: 10px;box-shadow: 5px 5px 5px darkgray;")
-    }
-    else{
-        img.setAttribute("style", "height:350px;width:auto;border-radius: 10px;box-shadow: 5px 5px 5px darkgray;")
-    }
+    img.setAttribute("style", "width:400px;height:300px;border-radius: 10px;box-shadow: 5px 5px 5px darkgray;")
     a.appendChild(img)
     let titlediv = document.createElement("div");
     titlediv.textContent = title;

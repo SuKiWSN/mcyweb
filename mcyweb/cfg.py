@@ -5,7 +5,7 @@ import time
 
 class CFG():
     def __init__(self):
-        self.img_server = "https://dg2ordyr4k5v3.cloudfront.net/"
+        self.img_server = "https://muaebxvt.q4w9l6g3w.work/"
         self.host = "https://d2dchjwa8oh2hv.cloudfront.net"
         # self.host = "https://yuseman.cusfjengbk.work"
         # self.img_server = "https://ssim.ctlweb.site/"
